@@ -8,19 +8,19 @@ export default createStore({
   },
   actions: {
     setHitsAsync({ commit }, payload) {
-      console.log('actions:', payload);
+      console.log("actions:", payload);
       commit("setHits", payload);
     },
   },
   mutations: {
     setHits(state, { hits }) {
-      console.log('mutations:', hits);
+      console.log("mutations:", hits);
       state.hits = hits;
     },
   },
   getters: {
-    hits(state){
+    hits(state) {
       return state.hits;
-    }
-  }
+    },
+  },
 });
