@@ -25,9 +25,10 @@ export function createMutations(store, mutations) {
 export function createGetters(store, getters) {
   store.getters = Object.create(null);
   forIn(getters, function (key, getterItem) {
+    const computedGetter = computed(() => getterItem(store.state, store.getters));
     Object.defineProperty(store.getters, key, {
       get() {
-        return computed(() => getterItem(store.state, store.getters)).value;
+        return computedGetter.value;
       },
     });
   });
