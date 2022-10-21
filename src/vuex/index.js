@@ -35,7 +35,7 @@ class Store {
   }
 
   install(app) {
-    // 在所有组件的模板中使用
+    // 在所有组件的模板中可以直接使用 $store
     app.config.globalProperties.$store = this;
 
     // 给所有子组件提供一个store属性
